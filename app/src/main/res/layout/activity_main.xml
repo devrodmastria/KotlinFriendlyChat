@@ -26,7 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/linearLayout"
-        android:layout_below="@+id/adView"/>
+        android:layout_alignParentTop="true"/>
 
     <LinearLayout
         android:orientation="horizontal"

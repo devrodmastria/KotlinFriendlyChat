@@ -132,8 +132,8 @@ class MainActivity : AppCompatActivity(), GoogleApiClient.OnConnectionFailedList
                 .addApi(Auth.GOOGLE_SIGN_IN_API)
                 .build()
 
-        mProgressBar = findViewById<View>(R.id.progressBar) as ProgressBar
-        mMessageRecyclerView = findViewById<View>(R.id.messageRecyclerView) as RecyclerView
+        mProgressBar = findViewById(R.id.progressBar) as ProgressBar
+        mMessageRecyclerView = findViewById(R.id.messageRecyclerView) as RecyclerView
         mLinearLayoutManager = LinearLayoutManager(this)
         mLinearLayoutManager!!.stackFromEnd = true
 
@@ -222,7 +222,7 @@ class MainActivity : AppCompatActivity(), GoogleApiClient.OnConnectionFailedList
         mMessageRecyclerView!!.adapter = mFirebaseAdapter
 
         // Initialize and request AdMob ad.
-        mAdView = findViewById<View>(R.id.adView) as AdView
+        mAdView = findViewById(R.id.adView) as AdView
 
         // Initialize Firebase Remote Config.
         mFirebaseRemoteConfig = FirebaseRemoteConfig.getInstance()
@@ -244,7 +244,7 @@ class MainActivity : AppCompatActivity(), GoogleApiClient.OnConnectionFailedList
         // Fetch remote config.
         fetchConfig()
 
-        mMessageEditText = findViewById<View>(R.id.messageEditText) as EditText
+        mMessageEditText = findViewById(R.id.messageEditText) as EditText
         mMessageEditText!!.filters = arrayOf<InputFilter>(InputFilter.LengthFilter(mSharedPreferences!!
                 .getInt(CodelabPreferences.FRIENDLY_MSG_LENGTH, DEFAULT_MSG_LENGTH_LIMIT)))
         mMessageEditText!!.addTextChangedListener(object : TextWatcher {
@@ -261,7 +261,7 @@ class MainActivity : AppCompatActivity(), GoogleApiClient.OnConnectionFailedList
             override fun afterTextChanged(editable: Editable) {}
         })
 
-        mAddMessageImageView = findViewById<View>(R.id.addMessageImageView) as ImageView
+        mAddMessageImageView = findViewById(R.id.addMessageImageView) as ImageView
         mAddMessageImageView!!.setOnClickListener {
             val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
             intent.addCategory(Intent.CATEGORY_OPENABLE)
@@ -269,7 +269,7 @@ class MainActivity : AppCompatActivity(), GoogleApiClient.OnConnectionFailedList
             startActivityForResult(intent, REQUEST_IMAGE)
         }
 
-        mSendButton = findViewById<View>(R.id.sendButton) as Button
+        mSendButton = findViewById(R.id.sendButton) as Button
         mSendButton!!.setOnClickListener {
             val friendlyMessage = FriendlyMessage(null, mMessageEditText!!.text.toString(), mUsername,
                     mPhotoUrl, null)

@@ -34,8 +34,14 @@ dependencies {
     compile 'com.github.bumptech.glide:glide:3.7.0'
 
 
-    // Google
+    // Google (all libraries added to avoid Gradle errors caused by different dependency versions)
     compile "com.google.android.gms:play-services-auth:$google_version"
+    compile "com.google.android.gms:play-services-ads-lite:$google_version"
+    compile "com.google.android.gms:play-services-basement:$google_version"
+    compile "com.google.android.gms:play-services-wearable:$google_version"
+    compile "com.google.android.gms:play-services-maps:$google_version"
+    compile "com.google.android.gms:play-services-ads:$google_version"
+    compile "com.google.android.gms:play-services-appinvite:$google_version"
 
     // Firebase
     compile "com.google.firebase:firebase-analytics:$google_version"
@@ -43,9 +49,7 @@ dependencies {
     compile "com.google.firebase:firebase-storage:$google_version"
     compile "com.google.firebase:firebase-auth:$google_version"
     compile "com.google.firebase:firebase-config:$google_version"
-    compile "com.google.android.gms:play-services-appinvite:$google_version"
     compile "com.google.firebase:firebase-messaging:$google_version"
-    compile "com.google.android.gms:play-services-ads:$google_version"
     compile "com.google.firebase:firebase-appindexing:$google_version"
     compile "com.google.firebase:firebase-crash:$google_version"
     compile "com.google.firebase:firebase-analytics:$google_version"
