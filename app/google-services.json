@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "youNeedToGetYourOwnJsonFile",
+    "firebase_url": "youNeedToGetYourOwnJsonFile",
+    "project_id": "youNeedToGetYourOwnJsonFile",
+    "storage_bucket": "youNeedToGetYourOwnJsonFile"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "youNeedToGetYourOwnJsonFile",
+        "android_client_info": {
+          "package_name": "com.arbormoon.kotlinfriendlychat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "youNeedToGetYourOwnJsonFile",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "youNeedToGetYourOwnJsonFile"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
