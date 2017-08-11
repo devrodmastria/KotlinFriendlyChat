@@ -1,11 +1,15 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-//apply plugin: 'kotlin'
+
+ext{
+    google_version = '11.0.4'
+    support_version = '26.0.1'
+}
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    buildToolsVersion "$support_version"
     defaultConfig {
         applicationId "com.arbormoon.kotlinfriendlychat"
         minSdkVersion 19
@@ -20,11 +24,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-}
-
-ext{
-    google_version = '11.0.4'
-    support_version = '26.0.1'
 }
 
 dependencies {
