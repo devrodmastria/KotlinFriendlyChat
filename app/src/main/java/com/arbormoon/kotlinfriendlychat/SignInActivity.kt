@@ -17,6 +17,7 @@ package com.arbormoon.kotlinfriendlychat
 
 import android.content.Intent
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View
@@ -49,7 +50,7 @@ class SignInActivity : AppCompatActivity(), GoogleApiClient.OnConnectionFailedLi
         setContentView(R.layout.activity_sign_in)
 
         // Assign fields
-        mSignInButton = findViewById<View>(R.id.sign_in_button) as SignInButton
+        mSignInButton = findViewById(R.id.sign_in_button) as SignInButton
 
         // Set click listeners
         mSignInButton!!.setOnClickListener(this)
@@ -103,8 +104,17 @@ class SignInActivity : AppCompatActivity(), GoogleApiClient.OnConnectionFailedLi
             } else {
                 // Google Sign In failed
                 Log.e(TAG, "Google Sign In failed.")
+                showDialog("Congratulations!", "Your app compiled :)")
+
             }
         }
+    }
+
+    private fun showDialog(title: String, message: String){
+        val alertDialog = AlertDialog.Builder(this).create()
+        alertDialog.setTitle(title)
+        alertDialog.setMessage(message)
+        alertDialog.show()
     }
 
     private fun firebaseAuthWithGoogle(acct: GoogleSignInAccount) {
