@@ -104,7 +104,7 @@ class SignInActivity : AppCompatActivity(), GoogleApiClient.OnConnectionFailedLi
             } else {
                 // Google Sign In failed
                 Log.e(TAG, "Google Sign In failed.")
-                showDialog("Congratulations!", "Your app compiled :)")
+                showDialog("Congratulations!", getString(R.string.next))
 
             }
         }

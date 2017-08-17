@@ -9,5 +9,6 @@
     <string name="cause_crash">Cause Crash</string>
     <string name="sign_out">Sign Out</string>
     <string name="invite_menu_label">Invite</string>
+    <string name="next">Your app works! :)\n\nTo enter the chat, you need to add a custom google-services.json file to your project\'s app folder and add your app\'s SHA1 signature to your Firebase console. Visit https://github.com/rmesquit/KotlinFriendlyChat for more info.</string>
 
 </resources>
