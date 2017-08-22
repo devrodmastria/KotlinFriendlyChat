@@ -40,32 +40,37 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 
 class SignInActivity : AppCompatActivity(), GoogleApiClient.OnConnectionFailedListener, View.OnClickListener {
-    private var mSignInButton: SignInButton? = null
 
-    private var mGoogleApiClient: GoogleApiClient? = null
-    private var mFirebaseAuth: FirebaseAuth? = null
+    private lateinit var signInButton: SignInButton
+    private lateinit var googleApiClient: GoogleApiClient
+    private lateinit var firebaseAuth: FirebaseAuth
+
+    companion object { // Equivalent to static variables in Java
+        private val TAG = "SignInActivity"
+        private val RC_SIGN_IN = 9001
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
 
         // Assign fields
-        mSignInButton = findViewById(R.id.sign_in_button) as SignInButton
+        signInButton = findViewById(R.id.sign_in_button) as SignInButton
 
         // Set click listeners
-        mSignInButton!!.setOnClickListener(this)
+        signInButton.setOnClickListener(this)
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build()
-        mGoogleApiClient = GoogleApiClient.Builder(this)
+        googleApiClient = GoogleApiClient.Builder(this)
                 .enableAutoManage(this /* FragmentActivity */, this /* OnConnectionFailedListener */)
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build()
 
         // Initialize FirebaseAuth
-        mFirebaseAuth = FirebaseAuth.getInstance()
+        firebaseAuth = FirebaseAuth.getInstance()
     }
 
     private fun handleFirebaseAuthResult(authResult: AuthResult?) {
@@ -87,7 +92,7 @@ class SignInActivity : AppCompatActivity(), GoogleApiClient.OnConnectionFailedLi
     }
 
     private fun signIn() {
-        val signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient)
+        val signInIntent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient)
         startActivityForResult(signInIntent, RC_SIGN_IN)
     }
 
@@ -120,7 +125,7 @@ class SignInActivity : AppCompatActivity(), GoogleApiClient.OnConnectionFailedLi
     private fun firebaseAuthWithGoogle(acct: GoogleSignInAccount) {
         Log.d(TAG, "firebaseAuthWithGoogle:" + acct.id!!)
         val credential = GoogleAuthProvider.getCredential(acct.idToken, null)
-        mFirebaseAuth!!.signInWithCredential(credential)
+        firebaseAuth.signInWithCredential(credential)
                 .addOnCompleteListener(this) { task ->
                     Log.d(TAG, "signInWithCredential:onComplete:" + task.isSuccessful)
 
@@ -143,12 +148,6 @@ class SignInActivity : AppCompatActivity(), GoogleApiClient.OnConnectionFailedLi
         // be available.
         Log.d(TAG, "onConnectionFailed:" + connectionResult)
         Toast.makeText(this, "Google Play Services error.", Toast.LENGTH_SHORT).show()
-    }
-
-    companion object {
-
-        private val TAG = "SignInActivity"
-        private val RC_SIGN_IN = 9001
     }
 
 }

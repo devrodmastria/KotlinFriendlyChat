@@ -1,8 +1,9 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions' // plugin offers alternative to findViewById - the following example is all you need to find and set text to a text view: viewId.text = "Your text"
 
 ext{
-    google_version = '10.2.4' // keep this version (10.2.4) for compatibility with Studio 2.3
+    google_version = '11.2.0' // version 10.2.4 works with Studio 2.3
     support_version = '26.0.1'
 }
 

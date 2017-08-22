@@ -15,7 +15,6 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
     }
 
     companion object {
-
         private val TAG = "MyFMService"
     }
 }

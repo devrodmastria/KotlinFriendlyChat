@@ -22,7 +22,6 @@ class MyFirebaseInstanceIdService : FirebaseInstanceIdService() {
     }
 
     companion object {
-
         private val TAG = "MyFirebaseIIDService"
         private val FRIENDLY_ENGAGE_TOPIC = "friendly_engage"
     }

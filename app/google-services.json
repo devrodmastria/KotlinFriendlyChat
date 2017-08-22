@@ -8,7 +8,7 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "youNeedToGetYourOwnJsonFile",
+        "mobilesdk_app_id": "1:279993590756:android:b5d75907de594a2d",
         "android_client_info": {
           "package_name": "com.arbormoon.kotlinfriendlychat"
         }
