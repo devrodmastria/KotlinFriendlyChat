@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">KotlinFriendlyChat</string>
+    <string name="app_name">Kotlin Chat</string>
     <string name="sign_in">Sign In</string>
     <string name="banner_ad_unit_id" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
     <string name="invitation_message">Please join me for a friendly chat</string>

@@ -5,9 +5,10 @@ package com.arbormoon.kotlinfriendlychat
  */
 
 data class FriendlyMessage(
-    var id: String,
-    var text: String,
-    var name: String,
-    var photoUrl: String,
-    var imageUrl: String) {
+        var id: String = "",
+        var text: String = "",
+        var name: String = "",
+        var photoUrl: String = "",
+        var imageUrl: String = ""){
+
 }

@@ -22,8 +22,6 @@
         </activity>
 
         <activity android:name=".SignInActivity" />
-        <activity android:name=".RecyclerViewAdapter" />
-        <activity android:name=".RecyclerViewAdapter$Child" />
 
         <service
             android:name=".MyFirebaseMessagingService"
